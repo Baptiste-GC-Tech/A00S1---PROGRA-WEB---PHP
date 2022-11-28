@@ -1,0 +1,66 @@
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  background-image: url(../asset/hexagon-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+nav{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+nav ul{
+  margin-left: 12%;
+}
+nav ul i{
+  height: 64px !important;
+  line-height: 64px !important;
+}
+#current{
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#content{
+  margin: 0 3% 0 3%;
+}
+
+h1{
+  font-weight: bold;
+  margin: 45px 0 45px 0;
+}
+
+#duo{
+  margin-top: 35px;
+  scroll-margin: 64px;
+}
+#duo div.duo_member{
+  display: flex;
+  flex-direction: row;
+}
+#duo img{
+  width: 25% !important;
+  height: 50%;
+  margin: 5px;
+}
+#duo h2{
+  line-height: 100%;
+  margin: 1.7rem 0 2.7rem 0;
+  font-size: 3vw
+}
+
+.modal-trigger{
+  margin: 70px 0 20px 50%;
+}
+
+footer p{
+  font-size: 1.8vw;
+  position: sticky;
+}
