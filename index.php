@@ -13,7 +13,7 @@
 
   <body>
 
-    <?php 
+    <?php
       require "php nonsense/contents/responsive navbar.php"
     ?>
 
@@ -23,11 +23,7 @@
       <div id="duo" class="row">
         <div class="col m1 hide-on-small-only"></div>
         <div class="col m5 s6">
-          <div class="duo_member">
-            <img src="asset/Baptiste.jpg" alt="Une photo de Baptiste">
-            <h2 class="col s9 valign-wrapper">"Un jour j'aurais un bureau à Nintendo"</h2>
-          </div>
-          <p>J'ai eu la chance de savoir très tôt dans ma vie que mon métier rêvé résidais dans la programmation. Je suis très enthousisate à l'idée de pouvoir présenter ici mes anciens travaux ! Un jour il y aura un trailre de jeu ici, c'est promis !</p>
+          <?php require "php nonsense/contents/duo member.php" ?>
         </div>
         <div class="col m5 s6">
           <div class="duo_member">
