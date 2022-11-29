@@ -61,8 +61,21 @@
           <button class="btn modal-close cyan">Envoyer</button>
         </div>
       </div>
+      <form>
+      <label for="identifiant">identifiant:</label><br>
+      <input type="text" id="identifiant" name="identifiant"><br>
+      <label for="password">Mot de passe:</label><br>
+      <input type="text" id="password" name="password"><br><br>
+      <input type=button value= "valider">
+      <div>
+        <label for="acount">vous n'avez pas de compte?</label><br>
+      </div>
+      <div>
+        <input type=button value="créer compte">
+      </div>
+    </form>
     </div>
-
+    
     <footer class="center black">
       <p class="white-text"> &copy; 2022-2023 Baptiste BOISMENU and Mathias LIPKO. All Rights Reserved. </p>
     </footer>

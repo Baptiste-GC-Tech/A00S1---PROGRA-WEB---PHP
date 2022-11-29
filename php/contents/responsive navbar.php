@@ -10,6 +10,7 @@
       <li><a href="projet2.php">Projet 2</a></li>
       <li><a href="projet3.php">Projet 3</a></li>
       <li><a href="#reachout">Nous contacter</a></li>
+      <li><a href="#connection">Se connecter</a></li>
       <li class="right"><a id="text-vid" class="teal teal-text" href="#">i</a></li>
     </ul>
   </div>
@@ -21,4 +22,5 @@
   <li><a href="#projet2">Projet 2</a></li>
   <li><a href="#projet3">Projet 3</a></li>
   <li><a href="#reachout">Nous contacter</a></li>
+  <li><a href="#connection">Se connecter</a></li>
 </ul>
