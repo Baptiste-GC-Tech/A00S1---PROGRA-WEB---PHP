@@ -23,14 +23,12 @@
       <div id="duo" class="row">
         <div class="col m1 hide-on-small-only"></div>
         <div class="col m5 s6">
+          <?php $member_id = 1 ?>
           <?php require "php nonsense/contents/duo member.php" ?>
         </div>
         <div class="col m5 s6">
-          <div class="duo_member">
-            <img src="asset/Mathias.jpg" alt="Une photo de Mathias">
-            <h2 class="col s9 valign-wrapper">"J'aime coder et je souhaite en faire mon métier"</h2>
-          </div>
-          <p>Étudiant en première année de Gtech, j'apprend l'encodage informatique. J'ai commencé pour le moment un projet de site web en utilisant le language PHP, et cette page est un autre de mes projets dans lequel j'apprend à maitriser le Jquery. Je souhaite devenir un développeur de jeu vidéo, mais j'ai encore beacoup à apprendre au Gaming Campus !</p>
+          <?php $member_id = 2 ?>
+          <?php require "php nonsense/contents/duo member.php" ?>
         </div>
         <div class="col m1 hide-on-small-only"></div>
       </div>
