@@ -11,32 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
 
-  <body>
-    <nav class="nav-wrapper teal">
-      <div class="container">
-        <a href="#" class="sidenav-trigger" data-target="mobile-navbar">
-          <i class="material-icons">menu</i>
-        </a>
-        <ul class="hide-on-med-and-down">
-          <li><a href="index.php"><i class="material-icons">home</i></a></li>
-          <li><a href="index.php#duo">Notre duo</a></li>
-          <li><a href="projet1.php" id="current">Projet 1</a></li>
-          <li><a href="projet2.php">Projet 2</a></li>
-          <li><a href="projet3.php">Projet 3</a></li>
-          <li><a href="index.php#reachout">Nous contacter</a></li>
-          <li class="right"><a id="text-vid" class="teal teal-text" href="#">i</a></li>
-        </ul>
-      </div>
-    </nav>
-
-  <ul class="sidenav teal lighten-3" id="mobile-navbar">
-    <li><a href="index.php">Home</a></li>
-    <li><a href="index.php#duo">Notre duo</a></li>
-    <li><a href="projet1.php" id="current">Projet 1</a></li>
-    <li><a href="projet2.php">Projet 2</a></li>
-    <li><a href="projet3.php">Projet 3</a></li>
-    <li><a href="index.php#reachout">Nous contacter</a></li>
-  </ul>
+  <?php require "php/contents/responsive navbar.php" ?>
 
   <div class="parallax-container">
     <div class="parallax"><img src="asset/hexagon-background.jpg"></div>

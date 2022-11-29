@@ -13,9 +13,7 @@
 
   <body>
 
-    <?php
-      require "php nonsense/contents/responsive navbar.php"
-    ?>
+    <?php require "php/contents/responsive navbar.php" ?>
 
     <div id="content" class="blue-grey lighten-3">
       <h1 class="center">Nos accomplissement numérique</h1>
@@ -24,11 +22,11 @@
         <div class="col m1 hide-on-small-only"></div>
         <div class="col m5 s6">
           <?php $member_id = 1 ?>
-          <?php require "php nonsense/contents/duo member.php" ?>
+          <?php require "php/contents/duo member.php" ?>
         </div>
         <div class="col m5 s6">
           <?php $member_id = 2 ?>
-          <?php require "php nonsense/contents/duo member.php" ?>
+          <?php require "php/contents/duo member.php" ?>
         </div>
         <div class="col m1 hide-on-small-only"></div>
       </div>
@@ -36,9 +34,9 @@
       <div class="row">
         <div class="col s2"></div>
         <div class="carousel carousel-slider col s8">
-          <?php $carrousel_id = 1; require "php nonsense/contents/carrousel entry.php" ?>
-          <?php $carrousel_id = 2; require "php nonsense/contents/carrousel entry.php" ?>
-          <?php $carrousel_id = 3; require "php nonsense/contents/carrousel entry.php" ?>
+          <?php $carrousel_id = 1; require "php/contents/carrousel entry.php" ?>
+          <?php $carrousel_id = 2; require "php/contents/carrousel entry.php" ?>
+          <?php $carrousel_id = 3; require "php/contents/carrousel entry.php" ?>
         </div>
         <div class="col s2"></div>
       </div>
