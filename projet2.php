@@ -20,23 +20,23 @@
         <i class="material-icons">menu</i>
       </a>
       <ul class="left hide-on-med-and-down">
-        <li><a href="index.html"><i  class="material-icons">home</i></a></li>
-        <li><a href="index.html#duo">Notre duo</a></li>
-        <li><a href="projet1.html">Projet 1</a></li>
-        <li><a href="projet2.html" id="current">Projet 2</a></li>
-        <li><a href="projet3.html">Projet 3</a></li>
-        <li><a href="index.html#reachout">Nous contacter</a></li>
+        <li><a href="index.php"><i  class="material-icons">home</i></a></li>
+        <li><a href="index.php#duo">Notre duo</a></li>
+        <li><a href="projet1.php">Projet 1</a></li>
+        <li><a href="projet2.php" id="current">Projet 2</a></li>
+        <li><a href="projet3.php">Projet 3</a></li>
+        <li><a href="index.php#reachout">Nous contacter</a></li>
       </ul>
     </div>
   </nav>
 
   <ul class="sidenav teal lighten-3" id="mobile-navbar">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="index.html#duo">Notre duo</a></li>
-    <li><a href="projet1.html">Projet 1</a></li>
-    <li><a href="projet2.html" id="current">Projet 2</a></li>
-    <li><a href="projet3.html">Projet 3</a></li>
-    <li><a href="index.html#reachout">Nous contacter</a></li>
+    <li><a href="index.php">Home</a></li>
+    <li><a href="index.php#duo">Notre duo</a></li>
+    <li><a href="projet1.php">Projet 1</a></li>
+    <li><a href="projet2.php" id="current">Projet 2</a></li>
+    <li><a href="projet3.php">Projet 3</a></li>
+    <li><a href="index.php#reachout">Nous contacter</a></li>
   </ul>
 
 
