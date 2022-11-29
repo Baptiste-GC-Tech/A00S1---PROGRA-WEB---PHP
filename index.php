@@ -36,9 +36,9 @@
       <div class="row">
         <div class="col s2"></div>
         <div class="carousel carousel-slider col s8">
-          <a href="projet1.php" class="carousel-item"><img src="asset/carr1.png" alt=""></a>
-          <a href="projet2.php" class="carousel-item"><img src="asset/carr2.png" alt=""></a>
-          <a href="projet3.php" class="carousel-item"><img src="asset/carr3.jpg" alt=""></a>
+          <?php $carrousel_id = 1; require "php nonsense/contents/carrousel entry.php" ?>
+          <?php $carrousel_id = 2; require "php nonsense/contents/carrousel entry.php" ?>
+          <?php $carrousel_id = 3; require "php nonsense/contents/carrousel entry.php" ?>
         </div>
         <div class="col s2"></div>
       </div>
