@@ -20,7 +20,7 @@
     <div class="col s12  teal darken-3"><h1 id="text-vid">Site web MicroMages</h1></div>
     <div class="col l4 s12">
       <h3 class="teal darken-2">Détails du projet</h3>
-      <p class="teal darken-1">Le CSS se base beacoup sur du flex, que j'ai réussis à rendre bien plus simple et condensé grâce aux précieux cours d'Antoine DiRoberto. Il nous a bien montrer que se casser la tâte pour rien, et ben ça sert à rien, et c'est bien plus agrébale de travailler comme ça</p>
+      <p class="teal darken-1">Le CSS se base beacoup sur du flex, que j'ai réussis à rendre bien plus simple et condensé grâce aux précieux cours d'Antoine Di Roberto. Il nous a bien montrer que se casser la tâte pour rien, et ben ça sert à rien, et c'est bien plus agrébale de travailler comme ça</p>
       <img src="asset/p1asset1.png" class="responsive-img">
     </div>
     <div class="col l4 s12">

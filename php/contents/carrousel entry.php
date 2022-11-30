@@ -1,4 +1,4 @@
-<?php require_once "C:\UwAmp\www\my-app\A00S1---PROGRA-WEB---PHP\php nonsense\config.php" ?>
+<?php require_once "C:\UwAmp\www\my-app\A00S1---PROGRA-WEB---PHP\php/config.php" ?>
 
 <?php
 $sql = "SELECT * FROM carrousel_elem WHERE id = :carrousel_id";
