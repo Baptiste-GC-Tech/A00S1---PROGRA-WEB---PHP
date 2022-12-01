@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mer 30 Novembre 2022 à 07:53
+-- Généré le :  Jeu 01 Décembre 2022 à 19:07
 -- Version du serveur :  5.7.11
--- Version de PHP :  5.6.18
+-- Version de PHP :  7.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -29,19 +29,18 @@ USE `b.boismenu - site web php`;
 --
 
 CREATE TABLE `carrousel_elem` (
-  `id` int(2) NOT NULL AUTO_INCREMENT UNIQUE,
+  `id` int(2) NOT NULL,
   `img` varchar(50) NOT NULL,
-  `alt` varchar(50) NOT NULL
+  `alt` varchar(50) NOT NULL,
+  `link` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `carrousel_elem`
 --
 
-INSERT INTO `carrousel_elem` (`id`, `img`, `alt`) VALUES
-(1, 'asset/carr1.png', 'huh'),
-(2, 'asset/carr2.png', 'huh'),
-(3, 'asset/carr3.jpg', 'huh');
+INSERT INTO `carrousel_elem` (`id`, `img`, `alt`, `link`) VALUES
+(4, 'asset/backgroundus.png', 'Description de l\'image', '1');
 
 -- --------------------------------------------------------
 
@@ -50,7 +49,7 @@ INSERT INTO `carrousel_elem` (`id`, `img`, `alt`) VALUES
 --
 
 CREATE TABLE `duo_member` (
-  `id` int(1) NOT NULL AUTO_INCREMENT UNIQUE,
+  `id` int(1) NOT NULL,
   `pic` varchar(50) NOT NULL,
   `alt` varchar(50) NOT NULL,
   `quote` varchar(100) NOT NULL,
@@ -72,7 +71,7 @@ INSERT INTO `duo_member` (`id`, `pic`, `alt`, `quote`, `description`) VALUES
 --
 
 CREATE TABLE `project_page` (
-  `id` int(3) NOT NULL AUTO_INCREMENT UNIQUE,
+  `id` int(3) NOT NULL,
   `project_title` varchar(50) NOT NULL,
   `project_details` varchar(1000) NOT NULL,
   `details_img` varchar(50) NOT NULL,
@@ -85,6 +84,13 @@ CREATE TABLE `project_page` (
   `teachings_alt` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Contenu de la table `project_page`
+--
+
+INSERT INTO `project_page` (`id`, `project_title`, `project_details`, `details_img`, `details_alt`, `project_subject`, `subject_img`, `subject_alt`, `project_teachings`, `teachings_img`, `teachings_alt`) VALUES
+(1, 'sus', 'a', 'asset/Mathius.jpg', 'Description de l\'image', 'mo', 'asset/Dripsus.webp', 'Description de l\'image', 'gus', 'asset/Baptistus.jpg', 'Description de l\'image');
+
 -- --------------------------------------------------------
 
 --
@@ -92,11 +98,19 @@ CREATE TABLE `project_page` (
 --
 
 CREATE TABLE `user` (
-  `id` int(5) NOT NULL AUTO_INCREMENT UNIQUE,
+  `id` int(5) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL,
   `admin` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `password`, `admin`) VALUES
+(2, 'admin', 'dde8edf5741cbf800c0a13714e883bb2', 1),
+(3, 'user', '75a4bc87498f397f2dbce57203117c35', 0);
 
 --
 -- Index pour les tables exportées
@@ -106,35 +120,54 @@ CREATE TABLE `user` (
 -- Index pour la table `carrousel_elem`
 --
 ALTER TABLE `carrousel_elem`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`);
 
 --
 -- Index pour la table `duo_member`
 --
 ALTER TABLE `duo_member`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`);
 
 --
 -- Index pour la table `project_page`
 --
 ALTER TABLE `project_page`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`);
 
 --
 -- Index pour la table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`);
 
 --
 -- AUTO_INCREMENT pour les tables exportées
 --
 
 --
+-- AUTO_INCREMENT pour la table `carrousel_elem`
+--
+ALTER TABLE `carrousel_elem`
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT pour la table `duo_member`
 --
 ALTER TABLE `duo_member`
   MODIFY `id` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT pour la table `project_page`
+--
+ALTER TABLE `project_page`
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT pour la table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
