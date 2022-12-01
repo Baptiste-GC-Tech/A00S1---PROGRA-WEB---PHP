@@ -30,7 +30,13 @@
         <?php
         if(isset($_SESSION['loggedIn']))
         {
-          echo "<p>Bienvenu ".$_SESSION['loggedIn']."</p>";
+          echo "Bienvenu ".$_SESSION['loggedIn'];
+          echo
+          "
+            <form method=\"post\" action=\"php/action/logout.php\">
+              <button type=\"submit\">Se déconnecter</button>
+            </form>
+          ";
         }
         ?>
       </div>
@@ -94,7 +100,6 @@
         <input type="password" name="password"><br><br>
         <button type="submit">Créer un compte</button>
       </form>
-    </form>
     </div>
 
     <footer class="center black">

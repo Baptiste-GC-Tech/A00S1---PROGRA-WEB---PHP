@@ -34,6 +34,15 @@ foreach ($listLogin as $login)
     {
       $success = 1;
       $_SESSION['loggedIn'] = $_POST['username'];
+
+      if($login['admin'] == 1)
+      {
+        header("Location: ../../admin.php");
+      }
+      else
+      {
+        header("Location: ../../index.php");
+      }
     }
   }
 }
@@ -48,6 +57,4 @@ elseif($success == 0)
 {
   $_SESSION['prompt'] = "Le mot de passe est incorrecte !";
 }
-
-header("Location: ../../index.php");
 ?>

@@ -1,6 +1,81 @@
 <?php require_once "php/config.php" ?>
 
+<?php
+if(isset($_SESSION['loggedIn']))
+{
+  $sql = "SELECT admin FROM user WHERE username = :loggedIn";
+  $dataBinded = array(
+      ':loggedIn' => $_SESSION['loggedIn'],
+  );
+  $pre = $pdo -> prepare($sql);
+  $pre -> execute($dataBinded);
+  $isAdmin = $pre -> fetch(PDO::FETCH_ASSOC);
+
+  if($isAdmin['admin'] != 1)
+  {
+    header("Location: index.php");
+  }
+}
+else
+{
+  header("Location: index.php");
+}
+?>
+
+<div class="grey lighten-2">
+  <p class="orange">
+    <?php
+    if(isset($_SESSION['prompt']))
+    {
+      echo $_SESSION['prompt'];
+    }
+    unset($_SESSION['prompt']);
+    ?>
+  </p>
+</div>
+
 <h1>PANEL ADMIN</h1>
+
+<a href="index.php#home">Retour à la page principale</a>
+
+<h2>Liste des utilisateurs enregistrés</h2>
+<?php
+$sql = "SELECT * FROM user";
+$pre = $pdo -> prepare($sql);
+$pre -> execute();
+$listUser = $pre->fetchAll(PDO::FETCH_ASSOC);
+?>
+<ul>
+  <?php
+  foreach ($listUser as $user)
+  {
+    echo "<li>".$user['username']." N°".$user['id']." ADMIN : ".$user['admin'];
+    echo
+    "
+      <form method=\"post\" action=\"php/action/change_username.php\">
+        <input type=\"hidden\" name=\"target\" value=\"".$user['id']."\">
+        <input type=\"text\" name=\"new_username\" value=\"".$user['username']."\">
+        <button type=\"submit\">Change username</button>
+      </form>
+    ";
+    echo
+    "
+      <form method=\"post\" action=\"php/action/delete_user.php\">
+        <input type=\"hidden\" name=\"target\" value=\"".$user['id']."\">
+        <button type=\"submit\">Remove user</button>
+      </form>
+    ";
+    echo
+    "
+      <form method=\"post\" action=\"php/action/toggle_admin.php\">
+        <input type=\"hidden\" name=\"target\" value=\"".$user['id']."\">
+        <input type=\"hidden\" name=\"cur_admin\" value=\"".$user['admin']."\">
+        <button type=\"submit\">Toggle privileges</button>
+      </form>
+    ";
+  }
+  ?>
+</ul>
 
 <h2>Liste des projets existants</h2>
 <?php
@@ -35,7 +110,7 @@ $listProject = $pre->fetchAll(PDO::FETCH_ASSOC);
     <input type="text" name="teachings_alt" value="Description de l'image"><br>
 
     <p>L'image pour le carrousel : <input type="file" name="carrousel_img"><input type="text" name="carrousel_alt" value="Description de l'image"></p>
-    
+
     <button type="submit">Ajouter à la BD</button>
 </form>
 
