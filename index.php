@@ -16,6 +16,26 @@
     <?php require "php/contents/responsive_navbar.php" ?>
 
     <div id="content" class="blue-grey lighten-3">
+
+      <div class="grey lighten-2">
+        <p class="orange">
+          <?php
+          if(isset($_SESSION['prompt']))
+          {
+            echo $_SESSION['prompt'];
+          }
+          unset($_SESSION['prompt']);
+          ?>
+        </p>
+        <?php
+        if(isset($_SESSION['loggedIn']))
+        {
+          echo "<p>Bienvenu ".$_SESSION['loggedIn']."</p>";
+        }
+        ?>
+      </div>
+
+
       <h1 class="center">Nos accomplissement numérique</h1>
 
       <div id="duo" class="row">
@@ -59,20 +79,20 @@
           <button class="btn modal-close cyan">Envoyer</button>
         </div>
       </div>
-      <form method="post" action="login.php">
-        <label for="identifiant">identifiant:</label><br>
-        <input type="text" id="identifiant" name="identifiant"><br>
-        <label for="password">Mot de passe:</label><br>
-        <input type="text" id="password" name="password"><br><br>
-        <button type="submit">se connecter</button>
+      <form method="post" action="php/action/login.php">
+        <label for="identifiant">Identifiant :</label><br>
+        <input type="text" name="username"><br>
+        <label for="password">Mot de passe :</label><br>
+        <input type="password" name="password"><br><br>
+        <button type="submit">Se connecter</button>
       </form>
-      <form method="post" action="create_account.php">
+      <form method="post" action="php/action/create_account.php">
         <label for="acount">vous n'avez pas de compte?</label><br>
-        <label for="identifiant">identifiant:</label><br>
-        <input type="text" id="identifiant" name="identifiant"><br>
-        <label for="password">Mot de passe:</label><br>
-        <input type="text" id="password" name="password"><br><br>
-        <button type="submit">créer un compte</button>
+        <label for="identifiant">Identifiant :</label><br>
+        <input type="text" name="username"><br>
+        <label for="password">Mot de passe :</label><br>
+        <input type="password" name="password"><br><br>
+        <button type="submit">Créer un compte</button>
       </form>
     </form>
     </div>

@@ -62,4 +62,4 @@ $pre = $pdo -> prepare($sql_carrousel);
 $pre -> execute($dataBinded_c);
 ?>
 
-<?php //header('Location: ../../admin.php') ?>
+<?php header('Location: ../../admin.php') ?>
