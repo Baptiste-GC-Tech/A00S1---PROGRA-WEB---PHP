@@ -13,7 +13,7 @@
 
   <body>
 
-    <?php require "php/contents/responsive navbar.php" ?>
+    <?php require "php/contents/responsive_navbar.php" ?>
 
     <div id="content" class="blue-grey lighten-3">
       <h1 class="center">Nos accomplissement numérique</h1>
@@ -75,7 +75,7 @@
       </div>
     </form>
     </div>
-    
+
     <footer class="center black">
       <p class="white-text"> &copy; 2022-2023 Baptiste BOISMENU and Mathias LIPKO. All Rights Reserved. </p>
     </footer>

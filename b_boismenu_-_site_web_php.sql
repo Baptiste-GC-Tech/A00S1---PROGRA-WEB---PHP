@@ -29,7 +29,7 @@ USE `b.boismenu - site web php`;
 --
 
 CREATE TABLE `carrousel_elem` (
-  `id` int(2) NOT NULL,
+  `id` int(2) NOT NULL AUTO_INCREMENT UNIQUE,
   `img` varchar(50) NOT NULL,
   `alt` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -50,7 +50,7 @@ INSERT INTO `carrousel_elem` (`id`, `img`, `alt`) VALUES
 --
 
 CREATE TABLE `duo_member` (
-  `id` int(1) NOT NULL,
+  `id` int(1) NOT NULL AUTO_INCREMENT UNIQUE,
   `pic` varchar(50) NOT NULL,
   `alt` varchar(50) NOT NULL,
   `quote` varchar(100) NOT NULL,
@@ -72,7 +72,7 @@ INSERT INTO `duo_member` (`id`, `pic`, `alt`, `quote`, `description`) VALUES
 --
 
 CREATE TABLE `project_page` (
-  `id` int(3) NOT NULL,
+  `id` int(3) NOT NULL AUTO_INCREMENT UNIQUE,
   `project_title` varchar(50) NOT NULL,
   `project_details` varchar(1000) NOT NULL,
   `details_img` varchar(50) NOT NULL,
@@ -92,7 +92,7 @@ CREATE TABLE `project_page` (
 --
 
 CREATE TABLE `user` (
-  `id` int(5) NOT NULL,
+  `id` int(5) NOT NULL AUTO_INCREMENT UNIQUE,
   `username` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL,
   `admin` tinyint(1) NOT NULL DEFAULT '0'
