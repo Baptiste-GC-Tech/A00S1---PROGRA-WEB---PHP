@@ -22,17 +22,17 @@ else
 }
 ?>
 
-<div class="grey lighten-2">
-  <p class="orange">
+  <p>
     <?php
     if(isset($_SESSION['prompt']))
     {
-      echo $_SESSION['prompt'];
+      echo "/---------------------!!!---------------------<br>";
+      echo $_SESSION['prompt']."<br>";
+      echo "\\---------------------!!!---------------------";
     }
     unset($_SESSION['prompt']);
     ?>
   </p>
-</div>
 
 <h1>PANEL ADMIN</h1>
 
@@ -88,7 +88,19 @@ $listProject = $pre->fetchAll(PDO::FETCH_ASSOC);
     <?php
     foreach($listProject as $project)
     {
-        echo "<li>".$project['project_title']." N°".$project['id'];
+        echo
+        "
+          <li>
+            <a href=\"projet.php?id=".$project['id']."\">".$project['project_title']." N°".$project['id']."</a>
+          </li>
+        ";
+        echo
+        "
+          <form method=\"post\" action=\"php/action/delete_project.php\">
+            <input type=\"hidden\" name=\"target\" value=\"".$project['id']."\">
+            <button type=\"submit\">Remove project</button>
+          </form>
+        ";
     };
     ?>
 </ul>

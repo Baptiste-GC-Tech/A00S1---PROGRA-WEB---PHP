@@ -3,7 +3,8 @@
 <?php
 if(empty($_POST['new_username']))
 {
-  $_SESSION['prompt'] = "New username is empty, brada...";
+  $_SESSION['prompt'] = "New username is empty, bro...";
+  header("Location: ../../admin.php");
   exit();
 }
 
