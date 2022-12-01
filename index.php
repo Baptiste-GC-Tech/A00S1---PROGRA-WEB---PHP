@@ -34,9 +34,7 @@
       <div class="row">
         <div class="col s2"></div>
         <div class="carousel carousel-slider col s8">
-          <?php $carrousel_id = 1; require "php/contents/carrousel_entry.php" ?>
-          <?php $carrousel_id = 2; require "php/contents/carrousel_entry.php" ?>
-          <?php $carrousel_id = 3; require "php/contents/carrousel_entry.php" ?>
+          <?php require "php/contents/carrousel_entry.php" ?>
         </div>
         <div class="col s2"></div>
       </div>
@@ -61,18 +59,21 @@
           <button class="btn modal-close cyan">Envoyer</button>
         </div>
       </div>
-      <form>
-      <label for="identifiant">identifiant:</label><br>
-      <input type="text" id="identifiant" name="identifiant"><br>
-      <label for="password">Mot de passe:</label><br>
-      <input type="text" id="password" name="password"><br><br>
-      <input type=button value= "valider">
-      <div>
+      <form method="post" action="login.php">
+        <label for="identifiant">identifiant:</label><br>
+        <input type="text" id="identifiant" name="identifiant"><br>
+        <label for="password">Mot de passe:</label><br>
+        <input type="text" id="password" name="password"><br><br>
+        <button type="submit">se connecter</button>
+      </form>
+      <form method="post" action="create_account.php">
         <label for="acount">vous n'avez pas de compte?</label><br>
-      </div>
-      <div>
-        <input type=button value="créer compte">
-      </div>
+        <label for="identifiant">identifiant:</label><br>
+        <input type="text" id="identifiant" name="identifiant"><br>
+        <label for="password">Mot de passe:</label><br>
+        <input type="text" id="password" name="password"><br><br>
+        <button type="submit">créer un compte</button>
+      </form>
     </form>
     </div>
 
