@@ -30,13 +30,18 @@ foreach($projectData as $data)
 ?>
 
 <?php
-$sql = "SELECT admin FROM user WHERE username = :loggedIn";
-$dataBinded = array(
-    ':loggedIn' => $_SESSION['loggedIn'],
-);
-$pre = $pdo -> prepare($sql);
-$pre -> execute($dataBinded);
-$isAdmin = $pre -> fetch(PDO::FETCH_ASSOC);
+$isAdmin = 0;
+
+if(isset($_SESSION['loggedIn']))
+{
+  $sql = "SELECT admin FROM user WHERE username = :loggedIn";
+  $dataBinded = array(
+      ':loggedIn' => $_SESSION['loggedIn'],
+  );
+  $pre = $pdo -> prepare($sql);
+  $pre -> execute($dataBinded);
+  $isAdmin = $pre -> fetch(PDO::FETCH_ASSOC);
+}
 ?>
 
 <div class="col s12 teal darken-3"><h1 id="text-vid"><?php echo $title ?></h1></div>
