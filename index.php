@@ -37,6 +37,18 @@
               <button type=\"submit\">Se déconnecter</button>
             </form>
           ";
+          $sql = "SELECT * FROM user WHERE username = :loggedIn";
+          $dataBinded = array(
+              ':loggedIn' => $_SESSION['loggedIn'],
+          );
+          $pre = $pdo -> prepare($sql);
+          $pre -> execute($dataBinded);
+          $isAdmin = $pre -> fetch(PDO::FETCH_ASSOC);
+
+          if($isAdmin['admin'] == 1)
+          {
+            echo "<a href=\"admin.php\">GO TO ADMIN PANEL</a>";
+          }
         }
         ?>
       </div>
@@ -70,19 +82,12 @@
       <div id="contact_modal" class="modal">
         <div class="modal-content">
           <h4>Remplissez ce formulaire</h4>
-          <form action="" method="get">
-            <div class="identity">
-              <label for="first_name">Ton prénom : </label> <input type="text" name="first_name">
-              <label for="last_name">Ton nom : </label> <input type="text" name="last_name">
-            </div>
-            <div class="online_identity">
-              <label for="email">Ton mail : </label> <input type="email" name="mail">
-              <label for="message">Ton message : </label> <input type="text" name="mail_content">
-            </div>
+          <form method="post" action="php/action/send_mail.php">
+            <label >Ton mail : </label><input type="text" name="mail">
+            <label >Ton objet : </label><input type="text" name="mail_object">
+            <label >Ton message : </label><input type="text" name="mail_content">
+            <button typ="submit" class="btn modal-close cyan">Envoyer</button>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button class="btn modal-close cyan">Envoyer</button>
         </div>
       </div>
       <form method="post" action="php/action/login.php">

@@ -1,10 +1,24 @@
 <?php require_once "../config.php" ?>
 
 <?php
-$i = 0;
+foreach($_POST as $data)
+{
+  if(empty($data))
+  {
+    $_SESSION['prompt'] = "Some text data were missing...";
+    header('Location: ../../admin.php');
+    exit();
+  }
+}
+
 foreach ($_FILES as $file)
 {
-  $i++;
+  if($file['error'] != 0)
+  {
+    $_SESSION['prompt'] = "Something went wrong with member picture or it was missing...";
+    header('Location: ../../admin.php');
+    exit();
+  }
   $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
   if($extension == 'png' || $extension == 'jpg' || $extension == 'jpeg' || $extension == 'webp')
   {
@@ -14,7 +28,9 @@ foreach ($_FILES as $file)
   }
   else
   {
-    echo "/!\\ EXTENSION ERRONÉE POUR LE FICHIER ".$i." /!\\";
+    $_SESSION['prompt'] = "Member picture is in an unsupported extension !";
+    header('Location: ../../admin.php');
+    exit();
   }
 }
 ?>

@@ -138,8 +138,14 @@ $listMember = $pre->fetchAll(PDO::FETCH_ASSOC);
     <?php
     foreach($listMember as $member)
     {
-        echo "<li>N° ".$member['id']."<img src=\"".$member['pic']."\"";
-        echo "<br>";
+        echo "<li>N° ".$member['id']."<img src=\"".$member['pic']."\">";
+        echo
+        "
+          <form method=\"post\" action=\"php/action/delete_member.php\">
+            <input type=\"hidden\" name=\"target\" value=\"".$member['id']."\">
+            <button type=\"submit\">Remove member</button>
+          </form>
+        ";
     };
     ?>
 </ul>

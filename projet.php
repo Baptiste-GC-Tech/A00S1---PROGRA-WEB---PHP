@@ -13,6 +13,18 @@
 
   <?php require "php/contents/responsive_navbar.php" ?>
 
+  <div class="grey lighten-2">
+    <p class="orange">
+      <?php
+      if(isset($_SESSION['prompt']))
+      {
+        echo $_SESSION['prompt'];
+      }
+      unset($_SESSION['prompt']);
+      ?>
+    </p>
+  </div>
+
   <div class="parallax-container">
     <div class="parallax"><img src="asset/hexagon-background.jpg"></div>
   </div>
