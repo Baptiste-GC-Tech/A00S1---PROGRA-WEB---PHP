@@ -8,7 +8,6 @@
     </a>
     <ul class="left hide-on-med-and-down">
       <li><a href="index.php#home"><i id="current" class="material-icons">home</i></a></li>
-      <li><a href="index.php#duo">Notre duo</a></li>
       <?php
       $sql = "SELECT * FROM project_page";
       $pre = $pdo -> prepare($sql);
@@ -19,7 +18,6 @@
               echo "<li><a href=\"projet.php?id=".$project['id']."\">".$project['project_title']."</a></li>";
           };
       ?>
-      <li><a href="index.php#reachout">Nous contacter</a></li>
     </ul>
   </div>
 </nav>

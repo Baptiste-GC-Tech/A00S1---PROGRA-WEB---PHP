@@ -36,9 +36,9 @@ else
 
 <h1>PANEL ADMIN</h1>
 
-<a href="index.php#home">Retour à la page principale</a>
+<a href="index.php#home">Back to home page</a>
 
-<h2>Liste des utilisateurs enregistrés</h2>
+<h2>List of registered users</h2>
 <?php
 $sql = "SELECT * FROM user";
 $pre = $pdo -> prepare($sql);
@@ -77,7 +77,7 @@ $listUser = $pre->fetchAll(PDO::FETCH_ASSOC);
   ?>
 </ul>
 
-<h2>Liste des projets existants</h2>
+<h2>List of projects</h2>
 <?php
 $sql = "SELECT * FROM project_page";
 $pre = $pdo -> prepare($sql);
@@ -105,7 +105,7 @@ $listProject = $pre->fetchAll(PDO::FETCH_ASSOC);
     ?>
 </ul>
 
-<h3>Ajouter un projet</h3>
+<h3>Add a project</h3>
 <form method="post" action="php/action/add_project.php" enctype="multipart/form-data">
     <input type="text" name="title" value="Titre du projet"><br>
 
@@ -127,7 +127,7 @@ $listProject = $pre->fetchAll(PDO::FETCH_ASSOC);
 </form>
 
 
-<h2>Liste des membres existants</h2>
+<h2>List of members</h2>
 <?php
 $sql = "SELECT * FROM duo_member";
 $pre = $pdo -> prepare($sql);
@@ -146,11 +146,45 @@ $listMember = $pre->fetchAll(PDO::FETCH_ASSOC);
             <button type=\"submit\">Remove member</button>
           </form>
         ";
+        echo
+        "
+          <form method=\"post\" action=\"php/action/grant_member.php\">
+            <input type=\"hidden\" name=\"position\" value=\"1\">
+            <input type=\"hidden\" name=\"target\" value=\"".$member['id']."\">
+            <button type=\"submit\">Promote to home page as member 1</button>
+          </form>
+        ";
+        echo
+        "
+          <form method=\"post\" action=\"php/action/grant_member.php\">
+            <input type=\"hidden\" name=\"position\" value=\"2\">
+            <input type=\"hidden\" name=\"target\" value=\"".$member['id']."\">
+            <button type=\"submit\">Promote to home page as member 2</button>
+          </form>
+        ";
     };
     ?>
 </ul>
 
-<h3>Ajouter un membre</h3>
+<h3>Activated members</h3>
+<?php
+$sql = "SELECT * FROM home_page WHERE id = 1";
+$pre = $pdo -> prepare($sql);
+$pre -> execute();
+$listActivatedMember = $pre -> fetchAll(PDO::FETCH_ASSOC);
+
+foreach($listActivatedMember as $member)
+{
+  $member1 = $member['member1'];
+  $member2 = $member['member2'];
+}
+?>
+<ul>
+  <li>Member 1 : #<?php echo $member1 ?></li>
+  <li>Member 2 : #<?php echo $member2 ?></li>
+</ul>
+
+<h3>Add a member</h3>
 <form method="post" action="php/action/add_member.php" enctype="multipart/form-data">
     <input type="text" name="quote" value="Citation/Inspiration"><br>
     <textarea name="description" cols="30" rows="10">Description, backstory, blablabla...</textarea>
